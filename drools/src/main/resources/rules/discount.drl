@@ -1,0 +1,9 @@
+package rules;
+
+rule "Apply 10% Discount"
+when
+    $order : facts.Order(total > 1000)
+then
+    $order.setDiscount(10);
+    System.out.println("10% discount applied.");
+end
